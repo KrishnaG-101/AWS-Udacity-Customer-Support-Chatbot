@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "id": "t1_faq_return",
+      "prompt": "How many days do I have to return an item?",
+      "expected": "The bot should answer the question using only the FAQ document, stating the specific return window."
+    },
+    {
+      "id": "t2_redirect_out_of_scope",
+      "prompt": "Can you give me a good recipe for chocolate chip cookies?",
+      "expected": "The bot should politely apologize and redirect the user to the human support line at 1-800-555-0199."
+    },
+    {
+      "id": "t3_bug_missing_info",
+      "prompt": "The checkout page is broken.",
+      "expected": "The bot should recognize this is a bug report but NOT call the tool. It should acknowledge the issue and ask the user for the missing environment and steps to reproduce."
+    },
+    {
+      "id": "t4_bug_complete_info",
+      "prompt": "I want to report a bug. The search bar crashes. Steps to reproduce: 1. Go to homepage 2. Type 'shoes' 3. Hit enter. Environment: Firefox on Windows 11.",
+      "expected": "The bot should extract the description, steps, and environment, call the create_bug_report tool, and return a ticket ID to the customer."
+    }
+  ]
+}
